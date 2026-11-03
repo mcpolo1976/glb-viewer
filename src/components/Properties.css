@@ -1,0 +1,137 @@
+.properties {
+  position: relative;
+  flex: 1;
+  min-height: 0;
+  width: 100%;
+  z-index: 30;
+  background-color: rgba(24, 24, 24, 0.62);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  user-select: none;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.35);
+}
+
+.props-content {
+  flex: 1;
+  overflow-y: auto;
+  padding: 8px;
+}
+
+.props-empty {
+  padding: 12px;
+  font-size: 12px;
+  color: #6b7280;
+}
+
+.prop-section {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.prop-section-title {
+  margin: 12px 0 4px;
+  font-size: 11px;
+  font-weight: 600;
+  color: #6b7280;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.prop-section-title:first-child {
+  margin-top: 0;
+}
+
+.prop-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  min-height: 24px;
+  padding: 2px 0;
+}
+
+.prop-label {
+  font-size: 12px;
+  color: #9ca3af;
+  flex-shrink: 0;
+}
+
+.prop-text {
+  font-size: 12px;
+  color: #e5e7eb;
+  text-align: right;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.prop-values {
+  display: flex;
+  gap: 8px;
+}
+
+.prop-value {
+  font-size: 12px;
+  color: #e5e7eb;
+  font-variant-numeric: tabular-nums;
+}
+
+.prop-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  justify-content: flex-end;
+}
+
+.prop-tag {
+  font-size: 11px;
+  color: #93c5fd;
+  background-color: #2563eb22;
+  border: 1px solid #2563eb44;
+  border-radius: 4px;
+  padding: 1px 6px;
+}
+
+/* 纹理缩略图 */
+.prop-textures {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8px;
+  padding: 4px 0;
+}
+
+.prop-texture {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3px;
+  padding: 6px;
+  background-color: #252525;
+  border: 1px solid #333;
+  border-radius: 6px;
+}
+
+.prop-texture img {
+  width: 64px;
+  height: 64px;
+  object-fit: contain;
+  border-radius: 3px;
+  background: repeating-conic-gradient(#2a2a2a 0% 25%, #222 0% 50%) 50% / 16px 16px;
+}
+
+.prop-texture-label {
+  font-size: 11px;
+  color: #d1d5db;
+}
+
+.prop-texture-size {
+  font-size: 10px;
+  color: #6b7280;
+  font-variant-numeric: tabular-nums;
+}

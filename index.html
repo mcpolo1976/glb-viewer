@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--
+      CSP：修复 Electron "Insecure Content-Security-Policy" 警告。
+      - 'unsafe-inline'(script/style)：Vite dev HMR 内联 preamble / three 内联样式
+      - 'wasm-unsafe-eval'：Draco/KTX2/Meshopt 解码器实例化 WASM
+      - blob: (img/connect/worker)：glTF 外部资源 blob URL、解码器 Blob Worker
+      - ws://127.0.0.1:5173：Vite dev HMR websocket
+    -->
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; script-src 'self' 'unsafe-inline' 'wasm-unsafe-eval'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; font-src 'self' data:; connect-src 'self' blob: ws://127.0.0.1:5173 http://127.0.0.1:5173 ws://localhost:8097; worker-src 'self' blob:"
+    />
+    <!--
+      React DevTools backend（开发模式）：
+      连接外部 DevTools 应用 (ws://localhost:8097)。
+      必须在 React 加载前注入，以便安装 __REACT_DEVTOOLS_GLOBAL_HOOK__。
+      Vite 会在 dev 模式下将其作为模块加载。
+    -->
+    <script type="module" src="/src/devtools/inject-devtools.ts"></script>
+    <title>GLB Viewer</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

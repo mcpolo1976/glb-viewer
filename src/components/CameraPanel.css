@@ -1,0 +1,137 @@
+.camera-panel {
+  position: relative;
+  flex-shrink: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 10px;
+  background-color: rgba(24, 24, 24, 0.62);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.35);
+  user-select: none;
+}
+
+.camera-panel-title {
+  font-size: 11px;
+  font-weight: 600;
+  color: #9ca3af;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.camera-presets {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 4px;
+}
+
+.camera-preset-btn {
+  width: 32px;
+  height: 28px;
+  border: 1px solid #444;
+  border-radius: 4px;
+  background-color: #374151;
+  color: #d1d5db;
+  font-size: 12px;
+  cursor: pointer;
+  transition: background-color 0.15s;
+}
+
+.camera-preset-btn:hover {
+  background-color: #4b5563;
+}
+
+.camera-preset-btn:active {
+  background-color: #2563eb;
+}
+
+.camera-preset-btn.reset {
+  color: #60a5fa;
+}
+
+/* FOV */
+.camera-fov {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.camera-fov-label {
+  font-size: 11px;
+  color: #9ca3af;
+}
+
+.camera-fov-slider {
+  width: 100px;
+  height: 4px;
+  -webkit-appearance: none;
+  background: #374151;
+  border-radius: 2px;
+}
+
+.camera-fov-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #60a5fa;
+  cursor: pointer;
+}
+
+.camera-fov-value {
+  font-size: 11px;
+  color: #e5e7eb;
+  font-variant-numeric: tabular-nums;
+  min-width: 30px;
+  text-align: right;
+}
+
+/* 剖切控制 */
+.camera-clipping {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  padding-top: 8px;
+}
+
+.camera-clip-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.camera-clip-toggle {
+  width: 22px;
+  height: 20px;
+  border: 1px solid #444;
+  border-radius: 4px;
+  background-color: #374151;
+  color: #9ca3af;
+  font-size: 10px;
+  cursor: pointer;
+  transition: background-color 0.15s, color 0.15s;
+}
+
+.camera-clip-toggle.active {
+  background-color: #2563eb;
+  color: #fff;
+  border-color: #2563eb;
+}
+
+.camera-clip-toggle:disabled {
+  cursor: not-allowed;
+  opacity: 0.9;
+}
+
+.camera-clip-row .camera-fov-slider {
+  width: 90px;
+}
+
+.camera-clip-row .camera-fov-slider:disabled {
+  opacity: 0.4;
+}
